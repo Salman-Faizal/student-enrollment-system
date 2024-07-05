@@ -1,8 +1,11 @@
 from rest_framework import serializers
 from .models import Student
 
+
 class StudentSerializer(serializers.ModelSerializer):
+  current_status = serializers.ReadOnlyField(source='current_status.name')
+
   class Meta:
     model = Student
-    fields = ['id', 'name', 'email', 'created_at', 'updated_at']
-    read_only_fields = ['created_at', 'updated_at']
+    fields = ['id', 'name', 'email', 'current_status', 'created_at', 'updated_at']
+    read_only_fields = ['current_status', 'created_at', 'updated_at']
