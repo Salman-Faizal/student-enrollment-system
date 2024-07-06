@@ -3,6 +3,7 @@ from .models import Student
 
 
 class StudentSerializer(serializers.ModelSerializer):
+  # Displaying the current-status of the student as read-only
   current_status = serializers.ReadOnlyField(source='current_status.name')
 
   class Meta:

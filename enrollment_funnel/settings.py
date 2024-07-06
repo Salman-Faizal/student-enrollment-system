@@ -136,12 +136,12 @@ DEFAULT_FUNNEL_STATUS = "Applied"
 # rest-framework configuration
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'logs.pagination.StandardResultsSetPagination',
-    'PAGE_SIZE': 50,
+    'PAGE_SIZE': 50,    # Default page-size for paginated results
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
-      'rest_framework.authentication.TokenAuthentication',
+      'rest_framework.authentication.TokenAuthentication',    # Use TokenAuthentication for API authentication
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-      'rest_framework.permissions.IsAuthenticated',
+      'rest_framework.permissions.IsAuthenticated',    # Require authentication for all API access
     ],
 }

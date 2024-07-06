@@ -11,7 +11,7 @@ class FunnelStatusViewSet(viewsets.ModelViewSet):
     serializer_class = FunnelStatusSerializer
     permission_classes = [IsAuthenticated]
 
-    # explicitly defined this method for additional validation
+    # Defining custom method for additional validation during FunnelStatus creation
     def create(self, request):
         # checking if a FunnelStatus with the same name already exists
         name = request.data.get('name')
